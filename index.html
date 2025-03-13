@@ -24,9 +24,9 @@
         <div class="button-container">
             <button type="submit" id="upgrade1" class="upgrade1">John: 50</button>
             <button type="submit" id="upgrade2" class="upgrade2">Garcia: 500</button>
-            <button type="submit" id="upgrade3" class="upgrade3">Michael: 5000</button>
-            <button type="submit" id="upgrade4" class="upgrade4">Lisa: 50000</button>
-            <button type="submit" id="upgrade5" class="upgrade5">Gary: 5000000</button>
+            <button type="submit" id="upgrade3" class="upgrade3">Michael: 500000</button>
+            <button type="submit" id="upgrade4" class="upgrade4">Lisa: 5000000</button>
+            <button type="submit" id="upgrade5" class="upgrade5">Gary: 5000000000</button>
         </div>
         <script>
             var count = 0;
@@ -72,13 +72,13 @@
                 cost = 500 * Math.pow(4, garcia);
                 updateUpgradeButton(upgrade2, cost, "Garcia");
         
-                cost = 5000 * Math.pow(8, michael);
+                cost = 500000 * Math.pow(8, michael);
                 updateUpgradeButton(upgrade3, cost, "Michael");
         
-                cost = 50000 * Math.pow(16, lisa);
+                cost = 5000000 * Math.pow(16, lisa);
                 updateUpgradeButton(upgrade4, cost, "Lisa");
         
-                cost = 5000000 * Math.pow(32, gary);
+                cost = 5000000000 * Math.pow(32, gary);
                 updateUpgradeButton(upgrade5, cost, "Gary");
             }
         
@@ -113,17 +113,17 @@
                     console.log("Upgrade button shown");
                 }
         
-                if (count >= 5000) {
+                if (count >= 500000) {
                     upgrade3.style.display = "block";
                     console.log("Upgrade button shown");
                 }
         
-                if (count >= 50000) {
+                if (count >= 5000000) {
                     upgrade4.style.display = "block";
                     console.log("Upgrade button shown");
                 }
         
-                if (count >= 5000000) {
+                if (count >= 5000000000) {
                     upgrade5.style.display = "block";
                     console.log("Upgrade button shown");
                 }
@@ -166,7 +166,7 @@
             });
         
             upgrade3.addEventListener("click", function() {
-                var cost = 5000 * Math.pow(8, michael);
+                var cost = 500000 * Math.pow(8, michael);
         
                 if (count >= cost) {
                     michael++;
@@ -183,7 +183,7 @@
             });
         
             upgrade4.addEventListener("click", function() {
-                var cost = 50000 * Math.pow(16, lisa);
+                var cost = 5000000 * Math.pow(16, lisa);
         
                 if (count >= cost) {
                     lisa++;
@@ -200,7 +200,7 @@
             });
 
             upgrade5.addEventListener("click", function() {
-                var cost = 5000000 * Math.pow(32, gary);
+                var cost = 5000000000 * Math.pow(32, gary);
         
                 if (count >= cost) {
                     gary++;
