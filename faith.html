@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FAITH CLICKER 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="faith.css">
+        <link rel="icon" href="johncon.png">
+    </head>
+    <body>
+        <div class="pray-container">
+            <button type="submit" id="button" class="click">PRAY</button>
+            <img src="johndance.gif" class="johndance" id="johndance">
+            <img src="garciarun.gif" class="garciadance" id="garciadance">
+            <img src="mikey.gif" class="mikey" id="mikey">
+            <img src="lisadance.gif" class="smoke" id="smoke">
+            <img src="garydance.gif" class="spoop" id="spoop">
+        </div>
+        <h3 class="hidden">this is a secret message : )</h3>
+        <h1 class="para">FAITH:</h1>
+        <h2 class="para" id="count"></h2>
+        <div class="button-container">
+            <button type="submit" id="upgrade1" class="upgrade1">John: 50</button>
+            <button type="submit" id="upgrade2" class="upgrade2">Garcia: 500</button>
+            <button type="submit" id="upgrade3" class="upgrade3">Michael: 5000</button>
+            <button type="submit" id="upgrade4" class="upgrade4">Lisa: 50000</button>
+            <button type="submit" id="upgrade5" class="upgrade5">Gary: 5000000</button>
+        </div>
+        <script>
+            var count = 0;
+            var button = document.getElementById("button");
+            var countdisplay = document.getElementById("count");
+            var upgrade1 = document.getElementById("upgrade1");
+            upgrade1.style.display = "none";
+            var john = 0;
+            var scoreperclick = 1;
+            var upgrade2 = document.getElementById("upgrade2");
+            upgrade2.style.display = "none";
+            var garcia = 0;
+            var upgrade3 = document.getElementById("upgrade3");
+            upgrade3.style.display = "none";
+            var michael = 0;
+            var upgrade4 = document.getElementById("upgrade4");
+            upgrade4.style.display = "none";
+            var lisa = 0;
+            var upgrade5 = document.getElementById("upgrade5");
+            upgrade5.style.display = "none";
+            var gary = 0;
+            var growthfactor = 2;
+            let upgrade1purchased = 0;
+            let upgrade2purchased = 0;
+            let upgrade3purchased = 0;
+            let upgrade4purchased = 0;
+            let upgrade5purchased = 0;
+            var dance = document.getElementById("johndance");
+            dance.style.display = "none";
+            var garciadance = document.getElementById("garciadance");
+            garciadance.style.display = "none";
+            var mikey = document.getElementById("mikey");
+            mikey.style.display = "none";
+            var smoke = document.getElementById("smoke")
+            smoke.style.display = "none"
+            var garyman = document.getElementById("spoop")
+            garyman.style.display = "none"
+        
+            function updateUpgradeButtons() {
+                var cost = 50 * Math.pow(2, john);
+                updateUpgradeButton(upgrade1, cost, "John");
+        
+                cost = 500 * Math.pow(4, garcia);
+                updateUpgradeButton(upgrade2, cost, "Garcia");
+        
+                cost = 5000 * Math.pow(8, michael);
+                updateUpgradeButton(upgrade3, cost, "Michael");
+        
+                cost = 50000 * Math.pow(16, lisa);
+                updateUpgradeButton(upgrade4, cost, "Lisa");
+        
+                cost = 5000000 * Math.pow(32, gary);
+                updateUpgradeButton(upgrade5, cost, "Gary");
+            }
+        
+            function updateUpgradeButton(upgrade, cost, name) {
+                if (cost < Infinity) {
+                    upgrade.innerHTML = name + ": " + cost.toLocaleString();
+                }
+                if (cost >= Infinity) {
+                    upgrade.innerHTML = name + ": Infinity";
+                }
+            }
+        
+            button.addEventListener("click", function() {
+                count += scoreperclick;
+
+                if (count >= Infinity) {
+                    countdisplay.innerHTML = 'Infinity'
+                }
+                if (count < Infinity) {
+                    countdisplay.innerHTML = count.toLocaleString();
+                }
+                
+                console.log(count); 
+        
+                if (count >= 50) {
+                    upgrade1.style.display = "block";
+                    console.log("Upgrade button shown");
+                }
+        
+                if (count >= 500) {
+                    upgrade2.style.display = "block";
+                    console.log("Upgrade button shown");
+                }
+        
+                if (count >= 5000) {
+                    upgrade3.style.display = "block";
+                    console.log("Upgrade button shown");
+                }
+        
+                if (count >= 50000) {
+                    upgrade4.style.display = "block";
+                    console.log("Upgrade button shown");
+                }
+        
+                if (count >= 5000000) {
+                    upgrade5.style.display = "block";
+                    console.log("Upgrade button shown");
+                }
+        
+                updateUpgradeButtons();
+            });
+        
+            upgrade1.addEventListener("click", function() {
+                var cost = 50 * Math.pow(2, john);
+        
+                if (count >= cost) {
+                    john++;
+                    count -= cost;
+                    scoreperclick *= 2;
+                    countdisplay.innerHTML = count.toLocaleString();
+                    console.log("Upgrade purchased! Score per click: " + scoreperclick);
+                    upgrade1purchased++;
+                    if (upgrade1purchased > 0) {
+                        dance.style.display = "block";
+                    }
+                }
+                updateUpgradeButtons();
+            });
+        
+            upgrade2.addEventListener("click", function() {
+                var cost = 500 * Math.pow(4, garcia);
+        
+                if (count >= cost) {
+                    garcia++;
+                    count -= cost;
+                    scoreperclick *= 4;
+                    countdisplay.innerHTML = count.toLocaleString();
+                    console.log("Upgrade purchased! Score per click: " + scoreperclick);
+                    upgrade2purchased++;
+                    if (upgrade2purchased > 0) {
+                        garciadance.style.display = "block";
+                    }
+                }
+                updateUpgradeButtons();
+            });
+        
+            upgrade3.addEventListener("click", function() {
+                var cost = 5000 * Math.pow(8, michael);
+        
+                if (count >= cost) {
+                    michael++;
+                    count -= cost;
+                    scoreperclick *= 5;
+                    countdisplay.innerHTML = count.toLocaleString();
+                    console.log("Upgrade purchased! Score per click: " + scoreperclick);
+                    upgrade3purchased++;
+                    if (upgrade3purchased > 0) {
+                        mikey.style.display = "block";
+                    }
+                }
+                updateUpgradeButtons();
+            });
+        
+            upgrade4.addEventListener("click", function() {
+                var cost = 50000 * Math.pow(16, lisa);
+        
+                if (count >= cost) {
+                    lisa++;
+                    count -= cost;
+                    scoreperclick *= 10;
+                    countdisplay.innerHTML = count.toLocaleString();
+                    console.log("Upgrade purchased! Score per click: " + scoreperclick);
+                    upgrade4purchased++;
+                    if (upgrade4purchased > 0) {
+                        smoke.style.display = "block";
+                    }
+                }
+                updateUpgradeButtons();
+            });
+
+            upgrade5.addEventListener("click", function() {
+                var cost = 5000000 * Math.pow(32, gary);
+        
+                if (count >= cost) {
+                    gary++;
+                    count -= cost;
+                    scoreperclick *= 100;
+                    countdisplay.innerHTML = count.toLocaleString();
+                    console.log("Upgrade purchased! Score per click: " + scoreperclick);
+                    upgrade5purchased++;
+                    if (upgrade5purchased > 0) {
+                        garyman.style.display = "block";
+                    }
+                }
+                updateUpgradeButtons();
+            });
+        </script>        
+    </body>
+</html>

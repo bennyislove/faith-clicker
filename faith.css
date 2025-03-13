@@ -1,0 +1,115 @@
+@font-face {
+    font-family: faith;
+    src: url(faith.ttf);
+}
+
+.click {
+    color: gold;
+    text-align: center;
+    position:relative;
+    height: 200px;
+    width: 400px;
+    font-size: 75px;
+    font-family: faith;
+    border-radius: 5px;
+    border-color: gold;
+    border-style:groove;
+    border-width: 5px;
+    background-color: black;
+}
+
+.pray-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cross1,
+.cross2 {
+    position:absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.para {
+    text-align: center;
+    font-family: faith;
+    color: gold;
+}
+
+.hidden {
+    color: black;
+    font-family: faith;
+    text-align: center;
+}
+
+body {
+    background-color: black;
+}
+
+.button-container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.upgrade1,
+.upgrade2,
+.upgrade3,
+.upgrade4,
+.upgrade5 {
+    width: max-content;
+    height: 50px;
+    font-family: faith;
+    border-radius: 5px;
+    border-style: groove;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    background-color: black;
+    text-shadow: -.5px -.5px 0 white, .5px -.5px 0 white, -.5px .5px 0 white, .5px .5px 0 white;
+}
+
+.upgrade1 {
+    border-color: blue;
+    color: blue;
+}
+
+.upgrade2 {
+    border-color: lightgray;
+    color: lightgray;
+}
+
+.upgrade3 {
+    border-color: white;
+    color: white;
+    text-shadow: -.5px -.5px 0 red, .5px -.5px 0 red, -.5px .5px 0 red, .5px .5px 0 red;
+}
+
+.upgrade4 {
+    border-color: yellow;
+    color: yellow;
+    text-shadow: -.5px -.5px 0 yellow, .5px -.5px 0 yellow, -.5px .5px 0 yellow, .5px .5px 0 yellow;
+}
+
+.upgrade5 {
+    border-color: crimson;
+    color: crimson;
+    text-shadow: -.5px -.5px 0 black, .5px -.5px 0 black, -.5px .5px 0 black, .5px .5px 0 black;
+}
+
+.cross1,
+.cross2,
+.johndance,
+.mikey,
+.spoop {
+    width: 100px;
+    height: 100px;
+}
+
+.garciadance,
+.smoke {
+    width:50px;
+    height:100px;
+}
