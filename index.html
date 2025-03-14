@@ -64,12 +64,13 @@
             smoke.style.display = "none"
             var garyman = document.getElementById("spoop")
             garyman.style.display = "none"
+            var back = document.getElementById("back")
         
             // Adding the function to change background when a condition is met
             function changeBackground() {
-                document.body.style.transition = "background-image 1s ease-in-out";
-                document.body.style.backgroundImage = "url('johnhelp.gif')";
-                document.body.style.backgroundSize = "cover";
+                back.style.transition = "background-image 3s ease-in-out";
+                back.style.backgroundImage = "url('johnhelp.gif')";
+                back.style.backgroundSize = "cover";
             }
         
             function updateUpgradeButtons() {
