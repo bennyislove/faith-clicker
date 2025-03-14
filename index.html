@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="faith.css">
         <link rel="icon" href="johncon.png">
     </head>
-    <body>
+    <body id="back">
         <div class="pray-container">
             <button type="submit" id="button" class="click">PRAY</button>
             <img src="johndance.gif" class="johndance" id="johndance">
@@ -65,6 +65,13 @@
             var garyman = document.getElementById("spoop")
             garyman.style.display = "none"
         
+            // Adding the function to change background when a condition is met
+            function changeBackground() {
+                document.body.style.transition = "background-image 1s ease-in-out";
+                document.body.style.backgroundImage = "url('johnhelp.gif')";
+                document.body.style.backgroundSize = "cover";
+            }
+        
             function updateUpgradeButtons() {
                 var cost = 50 * Math.pow(2, john);
                 updateUpgradeButton(upgrade1, cost, "John");
@@ -88,18 +95,14 @@
                 }
                 if (cost >= Infinity) {
                     upgrade.innerHTML = name + ": Infinity";
+                    changeBackground();
                 }
             }
         
             button.addEventListener("click", function() {
                 count += scoreperclick;
-
-                if (count >= Infinity) {
-                    countdisplay.innerHTML = 'Infinity'
-                }
-                if (count < Infinity) {
-                    countdisplay.innerHTML = count.toLocaleString();
-                }
+                
+                countdisplay.innerHTML = count.toLocaleString();
                 
                 console.log(count); 
         
