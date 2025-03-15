@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="faith.css">
         <link rel="icon" href="johncon.png">
-        <audio autoplay loop>
-            <source src="Since.mp3" type="audio/mpeg">
+        <audio loop>
+            <source src="Since.mp3" type="audio/mpeg" id="song">
         </audio>
     </head>
     <body id="back">
@@ -63,11 +63,13 @@
             garciadance.style.display = "none";
             var mikey = document.getElementById("mikey");
             mikey.style.display = "none";
-            var smoke = document.getElementById("smoke")
-            smoke.style.display = "none"
-            var garyman = document.getElementById("spoop")
-            garyman.style.display = "none"
-            var back = document.getElementById("back")
+            var smoke = document.getElementById("smoke");
+            smoke.style.display = "none";
+            var garyman = document.getElementById("spoop");
+            garyman.style.display = "none";
+            var back = document.getElementById("back");
+            var playing = 0;
+            var song = document.getElementById("song");
         
             // Adding the function to change background when a condition is met
             function changeBackground() {
@@ -107,6 +109,10 @@
                 count += scoreperclick;
                 
                 countdisplay.innerHTML = count.toLocaleString();
+
+                if (playing < 1) {
+                    song.play();
+                }
                 
                 console.log(count); 
         
