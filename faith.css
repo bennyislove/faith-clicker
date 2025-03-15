@@ -113,3 +113,7 @@ body {
     width:50px;
     height:100px;
 }
+
+audio {
+    float:left;
+}
