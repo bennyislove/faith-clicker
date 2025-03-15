@@ -14,6 +14,12 @@
         <audio id="please">
             <source src="johnplease.wav" type="audio/wav">
         </audio>
+        <audio id="garymean">
+            <source src="garymean.wav" type="audio/wav">
+        </audio>
+        <audio id="johnmean">
+            <source src="johnmean.wav" type="audio/wav">
+        </audio>
     </head>
     <body id="back">
         <div class="pray-container">
@@ -34,6 +40,9 @@
             <button type="submit" id="upgrade4" class="upgrade4">Lisa: 5000000</button>
             <button type="submit" id="upgrade5" class="upgrade5">Gary: 5000000000</button>
         </div>
+        <body>
+            <a id="credits" class="credits" href="credits.html">Credits</a>
+        </body>
         <script>
             var count = 0;
             var button = document.getElementById("button");
@@ -73,13 +82,36 @@
             var back = document.getElementById("back");
             var playing = 0;
             var song = document.getElementById("song");
-            var please = document.getElementById("please")
+            var please = document.getElementById("please");
+            var credits = document.getElementById("credits");
+            credits.style.display = "none";
+            var garymean = document.getElementById("garymean");
+            var johnmean = document.getElementById("johnmean");
         
             function changeBackground() {
-                back.style.transition = "background-image 3s ease-in-out";
+                back.style.opacity = 1;
                 back.style.backgroundImage = "url('johnhelp.gif')";
                 back.style.backgroundSize = "cover";
-                please.play()
+                song.pause()
+                back.offsetHeight;
+                back.style.transition = "opacity 5s ease-in-out";
+                back.style.opacity = 0;
+
+                setTimeout(function() {
+                    please.play();
+                }, 5000);
+
+                setTimeout(function() {
+                    garymean.play();
+                }, 12000);
+
+                setTimeout(function() {
+                    johnmean.play();
+                }, 23000);
+
+                setTimeout(function() {
+                    credits.style.display = "block";
+                }, 32000);
             }
         
             function updateUpgradeButtons() {

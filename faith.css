@@ -113,3 +113,9 @@ body {
     width:50px;
     height:100px;
 }
+
+.credits {
+    font-family:faith;
+    text-align:center;
+    color:white;
+}

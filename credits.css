@@ -1,0 +1,19 @@
+@font-face {
+    font-family: faith;
+    src: url(faith.ttf);
+}
+
+body {
+    background-color:black;
+    font-family:faith;
+    text-align:center;
+}
+
+h1 {
+    color:gold;
+}
+
+h2,
+h3 {
+    color:white;
+}
