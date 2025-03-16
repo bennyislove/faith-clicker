@@ -115,7 +115,12 @@ body {
 }
 
 .credits {
-    font-family:faith;
-    text-align:center;
-    color:white;
+    font-family: faith;
+    text-align: center;
+    font-size: 30px;
+    position:relative;
+    top: 20px;
+    display: block;
+    z-index: 10;
+    color:white
 }

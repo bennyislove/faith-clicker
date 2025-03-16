@@ -40,9 +40,7 @@
             <button type="submit" id="upgrade4" class="upgrade4">Lisa: 5000000</button>
             <button type="submit" id="upgrade5" class="upgrade5">Gary: 5000000000</button>
         </div>
-        <body>
-            <a id="credits" class="credits" href="credits.html">Credits</a>
-        </body>
+        <a id="credits" class="credits" href="credits.html">Credits</a>
         <script>
             var count = 0;
             var button = document.getElementById("button");
@@ -103,15 +101,26 @@
 
                 setTimeout(function() {
                     garymean.play();
-                }, 19000);
+                }, 12000);
 
                 setTimeout(function() {
                     johnmean.play();
-                }, 34000);
+                }, 23000);
 
-                setTimeout(function() {
-                    credits.style.display = "block";
-                }, 41000);
+                dance.style.display = "none";
+                garciadance.style.display = "none";
+                mikey.style.display = "none";
+                smoke.style.display = "none";
+                garyman.style.display = "none";
+                upgrade1.style.display = "none";
+                upgrade2.style.display = "none";
+                upgrade3.style.display = "none";
+                upgrade4.style.display = "none";
+                upgrade5.style.display = "none";
+                button.style.display = "none";
+                countdisplay.style.display = "none";
+                back.style.opacity = 1;
+                credits.style.display = "block";
             }
         
             function updateUpgradeButtons() {
