@@ -31,7 +31,7 @@
             <img src="garydance.gif" class="spoop" id="spoop">
         </div>
         <h3 class="hidden">this is a secret message : )</h3>
-        <h1 class="para">FAITH:</h1>
+        <h1 class="para" id="faiith">FAITH:</h1>
         <h2 class="para" id="count"></h2>
         <div class="button-container">
             <button type="submit" id="upgrade1" class="upgrade1">John: 50</button>
@@ -85,6 +85,7 @@
             credits.style.display = "none";
             var garymean = document.getElementById("garymean");
             var johnmean = document.getElementById("johnmean");
+            var faiith = document.getElementById("faiith");
         
             function changeBackground() {
                 back.style.opacity = 1;
@@ -101,11 +102,11 @@
 
                 setTimeout(function() {
                     garymean.play();
-                }, 12000);
+                }, 13000);
 
                 setTimeout(function() {
                     johnmean.play();
-                }, 23000);
+                }, 25000);
 
                 dance.style.display = "none";
                 garciadance.style.display = "none";
@@ -119,6 +120,7 @@
                 upgrade5.style.display = "none";
                 button.style.display = "none";
                 countdisplay.style.display = "none";
+                faiith.style.display = "none";
                 back.style.opacity = 1;
                 credits.style.display = "block";
             }
